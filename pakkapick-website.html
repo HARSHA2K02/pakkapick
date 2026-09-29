@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pakka Pick | Honest Picks for Gadgets, Fashion, Kitchen &amp; Home</title>
+<meta name="description" content="Pakka Pick: honest reviews and the best product picks for gadgets, fashion, kitchen and home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Baloo+Tammudu+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1746c9;--navy:#0e2a7a;--yellow:#f9c823;--orange:#f2a20c;
+  --bg:#fffbea;--card:#fff;--ink:#12204d;--muted:#5b6690;--line:#f0e3a8;
+  --head:'Paytone One','Baloo Tammudu 2',Arial,sans-serif;--body:'Nunito',system-ui,'Segoe UI',Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b1533;--card:#13214a;--ink:#f4f6ff;--muted:#9fb0e6;--line:#25366e}}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:env(safe-area-inset-bottom)}
+a{color:inherit}:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.2px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);
+  border-bottom:2px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--head);font-size:1.25rem;color:var(--blue)}
+.brand svg{width:40px;height:40px}
+.pill{background:var(--blue);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:9px 18px;font-size:.9rem;box-shadow:0 3px 0 var(--navy);transition:transform .15s}
+.pill:hover{transform:translateY(-2px)}
+/* hero */
+.hero{background:var(--yellow);position:relative;overflow:hidden;padding:44px 0 90px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;background:var(--bg);
+  clip-path:ellipse(60% 100% at 50% 100%)}
+.hero .wrap{display:grid;gap:28px;align-items:center;justify-items:center;text-align:center;position:relative;z-index:1}
+.logo{width:min(320px,74vw);height:auto;filter:drop-shadow(0 14px 0 rgba(14,42,122,.18));animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-1.5deg)}}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;color:var(--navy)}
+.hero h1 span{color:#fff;-webkit-text-stroke:0;text-shadow:0 3px 0 var(--navy)}
+.hero p{color:var(--navy);font-weight:700;max-width:520px;margin:12px auto 0}
+.te{font-family:'Baloo Tammudu 2',sans-serif;font-weight:800;color:var(--blue);font-size:1.15rem;margin-top:6px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btn{font-weight:800;text-decoration:none;border-radius:14px;padding:13px 22px;border:3px solid var(--navy);box-shadow:0 5px 0 var(--navy);transition:transform .12s,box-shadow .12s;display:inline-block}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--navy)}
+.btn.a{background:var(--blue);color:#fff}.btn.b{background:#fff;color:var(--navy)}
+.dot{position:absolute;border-radius:50%;background:var(--orange);opacity:.35}
+.d1{width:90px;height:90px;left:-25px;top:60px}.d2{width:60px;height:60px;right:8%;top:30px;background:#fff}.d3{width:130px;height:130px;right:-40px;bottom:70px}
+/* trust */
+.trust{display:grid;gap:14px;margin:-8px auto 34px}
+@media(min-width:720px){.trust{grid-template-columns:repeat(3,1fr)}}
+.tcard{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px;display:flex;gap:14px;align-items:center}
+.tcard i{font-style:normal;font-size:1.9rem;background:var(--yellow);width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex:none}
+.tcard b{display:block;font-family:var(--head);font-weight:400;color:var(--blue)}.tcard span{color:var(--muted);font-size:.92rem}
+/* tracker */
+.tracker{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,var(--blue),#2f6bff);color:#fff;border-radius:24px;padding:24px 26px;margin-bottom:44px;text-decoration:none;box-shadow:0 8px 0 var(--navy)}
+.tracker h3{font-size:1.4rem}.tracker p{opacity:.92;max-width:460px}
+.tracker b{background:var(--yellow);color:var(--navy);border-radius:999px;padding:11px 22px;font-weight:800}
+/* picks */
+.sec h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--blue)}.sec>.wrap>p{color:var(--muted)}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.tools input{flex:1;min-width:200px;font:inherit;font-weight:700;padding:13px 16px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{font:inherit;font-weight:800;cursor:pointer;padding:10px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink)}
+.chips button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;list-style:none;padding:0;margin-top:8px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+.item{background:var(--card);border:2px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;animation:pop .4s both}
+.item:hover{transform:translateY(-5px);box-shadow:0 10px 0 var(--line)}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}}
+.tile{aspect-ratio:1;position:relative;display:grid;place-items:center;font-size:3.4rem;background:var(--c1)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:10px;top:10px;background:#fff;color:var(--navy);font-weight:800;font-size:.72rem;border-radius:999px;padding:4px 10px}
+.ok{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:var(--yellow);border:3px solid #fff;display:grid;place-items:center;color:var(--navy);font-weight:800}
+.info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.info h3{font-size:1rem;line-height:1.25;color:var(--ink)}
+.buy{margin-top:auto;text-align:center;text-decoration:none;font-weight:800;background:var(--yellow);color:var(--navy);border-radius:12px;padding:10px;border-bottom:4px solid var(--orange)}
+.empty{display:none;text-align:center;padding:30px;color:var(--muted)}
+/* footer */
+.social{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:46px 0 22px}
+.social a{text-decoration:none;font-weight:800;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:11px 20px}
+.social a:hover{background:var(--yellow);color:var(--navy)}
+footer{background:var(--navy);color:#cbd6ff;text-align:center;padding:30px 18px calc(30px + env(safe-area-inset-bottom));font-size:.85rem}
+footer b{font-family:var(--head);font-weight:400;color:var(--yellow);font-size:1.3rem;display:block;margin-bottom:6px}
+footer a{color:var(--yellow)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 800 800">
+<circle cx="400" cy="400" r="392" fill="#f9c823"/>
+<circle cx="400" cy="400" r="392" fill="none" stroke="#f2a20c" stroke-width="10"/>
+<!-- sparkles -->
+<g fill="#fff"><path d="M235 120 l9 22 22 9 -22 9 -9 22 -9 -22 -22 -9 22 -9z"/><path d="M572 105 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z"/><path d="M610 250 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5z"/></g>
+<!-- bag -->
+<g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M335 175 C335 60 465 60 465 175" fill="none" stroke="#0e2a7a" stroke-width="20"/>
+  <path d="M285 168 H515 Q536 168 539 190 L560 382 Q563 410 536 410 H264 Q237 410 240 382 L261 190 Q264 168 285 168Z" fill="#1746c9" stroke="#0e2a7a" stroke-width="10"/>
+  <path d="M258 205 H542" stroke="#0e2a7a" stroke-width="8" opacity=".5"/>
+  <!-- eyes -->
+  <ellipse cx="352" cy="268" rx="30" ry="36" fill="#fff"/><ellipse cx="448" cy="268" rx="30" ry="36" fill="#fff"/>
+  <circle cx="358" cy="274" r="17" fill="#0e2a7a"/><circle cx="454" cy="274" r="17" fill="#0e2a7a"/>
+  <circle cx="364" cy="266" r="6" fill="#fff"/><circle cx="460" cy="266" r="6" fill="#fff"/>
+  <!-- mouth + cheeks -->
+  <path d="M362 322 Q400 372 438 322 Z" fill="#0e2a7a" stroke="#0e2a7a" stroke-width="8"/>
+  <path d="M382 344 Q400 360 418 344 Q400 336 382 344Z" fill="#ff7a8a" stroke="none"/>
+  <circle cx="308" cy="325" r="15" fill="#ff8fa0" opacity=".75"/><circle cx="492" cy="325" r="15" fill="#ff8fa0" opacity=".75"/>
+  <!-- tick badge -->
+  <circle cx="530" cy="392" r="50" fill="#f9c823" stroke="#fff" stroke-width="10"/>
+  <path d="M506 392 L523 410 L556 372" fill="none" stroke="#0e2a7a" stroke-width="16"/>
+</g>
+<g font-family="'Paytone One','Liberation Sans',sans-serif" text-anchor="middle" font-size="160" stroke-linejoin="round">
+  <g fill="#0e2a7a" stroke="#0e2a7a" stroke-width="30" transform="translate(0 8)"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
+  <g fill="#fff" stroke="#fff" stroke-width="28"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
+  <g fill="#1746c9"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
+</g>
+</symbol></svg>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top" aria-label="Pakka Pick home"><svg><use href="#logo"/></svg>Pakka Pick</a>
+  <a class="pill" id="navTrack" href="/price-tracker">Price Tracker</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+  <div class="wrap">
+    <svg class="logo" viewBox="0 0 800 800" role="img" aria-label="Pakka Pick logo"><use href="#logo"/></svg>
+    <div>
+      <h1>Buy <span>sure.</span> Buy smart.</h1>
+      <p id="tagline">Honest reviews and the best picks for gadgets, fashion, kitchen and home.</p>
+      <div class="te">పక్కా పిక్ - నమ్మకంగా కొనండి</div>
+      <div class="cta"><a class="btn a" id="yt" href="#" target="_blank" rel="noopener">Watch on YouTube</a><a class="btn b" href="#picks">See today's picks</a></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="trust" aria-label="Why Pakka Pick">
+    <div class="tcard"><i>✅</i><div><b>Honest reviews</b><span>We say what's good and what's not.</span></div></div>
+    <div class="tcard"><i>🧪</i><div><b>Tested by us</b><span>Real use before any recommendation.</span></div></div>
+    <div class="tcard"><i>💸</i><div><b>Best price</b><span>Track prices before you buy.</span></div></div>
+  </section>
+
+  <a class="tracker" id="banner" href="/price-tracker">
+    <div><h3>Never overpay again</h3><p>Paste any Amazon link and see the price history. Buy at the right time.</p></div><b>Try price tracker</b>
+  </a>
+
+  <section class="sec" id="picks"><div class="wrap" style="padding:0">
+    <h2>Today's Pakka Picks</h2><p>Every product here is picked and tested by us.</p>
+    <div class="tools"><input id="q" type="search" placeholder="Search products..." aria-label="Search products"></div>
+    <div class="chips" id="chips" role="group" aria-label="Categories"></div>
+    <ul class="grid" id="grid"></ul>
+    <p class="empty" id="empty">No picks match yet. Try another word or category.</p>
+  </div></section>
+
+  <nav class="social" id="social" aria-label="Social links"></nav>
+</main>
+
+<footer>
+  <b>Pakka Pick</b>
+  <p>Links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+  <p style="margin-top:6px">Contact: <a id="mail" href="#"></a></p>
+</footer>
+
+<script>
+/* ========== EDIT THIS BLOCK ========== */
+const SITE={email:"hello@pakkapick.com",
+  youtube:"https://youtube.com/@pakkapick",
+  social:[{l:"YouTube",u:"https://youtube.com/@pakkapick"},{l:"Instagram",u:"https://instagram.com/pakkapick"},{l:"Threads",u:"https://threads.net/@pakkapick"},{l:"Facebook",u:"https://facebook.com/pakkapick"}]};
+const CATS={Gadgets:{e:"🎧",c:"#dbe6ff"},Fashion:{e:"👕",c:"#ffe1ea"},Kitchen:{e:"🍳",c:"#ffefc2"},Home:{e:"🏠",c:"#d9f5e6"}};
+// image can be "" (emoji tile shows). Add your Amazon affiliate links in url.
+const PRODUCTS=[
+ {t:"Wireless Earbuds Under 2000",cat:"Gadgets",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Smart Watch 1.8 inch",cat:"Gadgets",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Air Fryer 4L",cat:"Kitchen",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Non-stick Cookware Set",cat:"Kitchen",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Men's Casual Sneakers",cat:"Fashion",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Cotton Kurta Set",cat:"Fashion",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Robot Vacuum Cleaner",cat:"Home",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {t:"Smart LED Bulb Pack",cat:"Home",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"}
+];
+/* ===================================== */
+const $=id=>document.getElementById(id);
+$('yt').href=SITE.youtube;$('mail').href='mailto:'+SITE.email;$('mail').textContent=SITE.email;
+SITE.social.forEach(s=>{const a=document.createElement('a');a.href=s.u;a.textContent=s.l;a.target='_blank';a.rel='noopener';$('social').appendChild(a)});
+let cat='All';
+['All',...Object.keys(CATS)].forEach(c=>{const b=document.createElement('button');b.textContent=(CATS[c]?CATS[c].e+' ':'')+c;
+ b.setAttribute('aria-pressed',c===cat);b.onclick=()=>{cat=c;[...$('chips').children].forEach(x=>x.setAttribute('aria-pressed',x===b));render()};$('chips').appendChild(b)});
+function render(){
+ const q=$('q').value.trim().toLowerCase();
+ const list=PRODUCTS.filter(p=>(cat==='All'||p.cat===cat)&&p.t.toLowerCase().includes(q));
+ $('grid').innerHTML='';
+ list.forEach((p,i)=>{
+  const meta=CATS[p.cat]||{e:"🛍️",c:"#eee"},li=document.createElement('li');li.className='item';li.style.animationDelay=(i*50)+'ms';
+  const tile=document.createElement('div');tile.className='tile';tile.style.setProperty('--c1',meta.c);tile.textContent=meta.e;
+  if(p.image){const im=document.createElement('img');im.src=p.image;im.alt=p.t;im.loading='lazy';tile.appendChild(im)}
+  const tag=document.createElement('span');tag.className='tag';tag.textContent=p.cat;
+  const ok=document.createElement('span');ok.className='ok';ok.textContent='✓';ok.title='Pakka Pick';
+  tile.append(tag,ok);
+  const info=document.createElement('div');info.className='info';
+  const h=document.createElement('h3');h.textContent=p.t;
+  const a=document.createElement('a');a.className='buy';a.href=p.url;a.target='_blank';a.rel='noopener sponsored nofollow';a.textContent='View on Amazon';
+  info.append(h,a);li.append(tile,info);$('grid').appendChild(li)});
+ $('empty').style.display=list.length?'none':'block'}
+$('q').addEventListener('input',render);render();
+</script>
+</body>
+</html>
