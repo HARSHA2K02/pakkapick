@@ -9,8 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Baloo+Tammudu+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#1746c9;--navy:#0e2a7a;--yellow:#f9c823;--orange:#f2a20c;
-  --bg:#fffbea;--card:#fff;--ink:#12204d;--muted:#5b6690;--line:#f0e3a8;
+:root{--blue:#1746c9;--navy:#0e2a7a;--yellow:#f9c823;--orange:#f2a20c;--bg:#fffbea;--card:#fff;--ink:#12204d;--muted:#5b6690;--line:#f0e3a8;
   --head:'Paytone One','Baloo Tammudu 2',Arial,sans-serif;--body:'Nunito',system-ui,'Segoe UI',Roboto,sans-serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b1533;--card:#13214a;--ink:#f4f6ff;--muted:#9fb0e6;--line:#25366e}}
 *{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
@@ -18,23 +17,19 @@ body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1
 a{color:inherit}:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 18px}
 h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.2px}
-/* nav */
-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);
-  border-bottom:2px solid var(--line);padding-top:env(safe-area-inset-top)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:2px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:8px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--head);font-size:1.25rem;color:var(--blue)}
 .brand svg{width:40px;height:40px}
-.pill{background:var(--blue);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:9px 18px;font-size:.9rem;box-shadow:0 3px 0 var(--navy);transition:transform .15s}
-.pill:hover{transform:translateY(-2px)}
-/* hero */
+.pill{background:var(--blue);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:9px 18px;font-size:.9rem;box-shadow:0 3px 0 var(--navy);transition:transform .15s;border:0;font-family:inherit;cursor:pointer}
+.pill:hover{transform:translateY(-2px)}.pill.ig{background:linear-gradient(45deg,#f9a825,#e1306c 55%,#833ab4)}
 .hero{background:var(--yellow);position:relative;overflow:hidden;padding:44px 0 90px}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;background:var(--bg);
-  clip-path:ellipse(60% 100% at 50% 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;background:var(--bg);clip-path:ellipse(60% 100% at 50% 100%)}
 .hero .wrap{display:grid;gap:28px;align-items:center;justify-items:center;text-align:center;position:relative;z-index:1}
-.logo{width:min(320px,74vw);height:auto;filter:drop-shadow(0 14px 0 rgba(14,42,122,.18));animation:bob 4s ease-in-out infinite}
+.logo{width:min(300px,70vw);height:auto;filter:drop-shadow(0 14px 0 rgba(14,42,122,.18));animation:bob 4s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(-8px) rotate(-1.5deg)}}
 .hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;color:var(--navy)}
-.hero h1 span{color:#fff;-webkit-text-stroke:0;text-shadow:0 3px 0 var(--navy)}
+.hero h1 span{color:#fff;text-shadow:0 3px 0 var(--navy)}
 .hero p{color:var(--navy);font-weight:700;max-width:520px;margin:12px auto 0}
 .te{font-family:'Baloo Tammudu 2',sans-serif;font-weight:800;color:var(--blue);font-size:1.15rem;margin-top:6px}
 .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
@@ -43,79 +38,95 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .btn.a{background:var(--blue);color:#fff}.btn.b{background:#fff;color:var(--navy)}
 .dot{position:absolute;border-radius:50%;background:var(--orange);opacity:.35}
 .d1{width:90px;height:90px;left:-25px;top:60px}.d2{width:60px;height:60px;right:8%;top:30px;background:#fff}.d3{width:130px;height:130px;right:-40px;bottom:70px}
-/* trust */
+/* from-insta strip */
+.fromig{display:none;margin:-8px 0 20px;background:var(--navy);color:#fff;border-radius:18px;padding:14px 18px;font-weight:700;align-items:center;gap:12px}
+.fromig.show{display:flex}.fromig b{color:var(--yellow)}
 .trust{display:grid;gap:14px;margin:-8px auto 34px}
 @media(min-width:720px){.trust{grid-template-columns:repeat(3,1fr)}}
 .tcard{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px;display:flex;gap:14px;align-items:center}
 .tcard i{font-style:normal;font-size:1.9rem;background:var(--yellow);width:54px;height:54px;border-radius:16px;display:grid;place-items:center;flex:none}
 .tcard b{display:block;font-family:var(--head);font-weight:400;color:var(--blue)}.tcard span{color:var(--muted);font-size:.92rem}
-/* tracker */
 .tracker{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,var(--blue),#2f6bff);color:#fff;border-radius:24px;padding:24px 26px;margin-bottom:44px;text-decoration:none;box-shadow:0 8px 0 var(--navy)}
 .tracker h3{font-size:1.4rem}.tracker p{opacity:.92;max-width:460px}
 .tracker b{background:var(--yellow);color:var(--navy);border-radius:999px;padding:11px 22px;font-weight:800}
-/* picks */
 .sec h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--blue)}.sec>.wrap>p{color:var(--muted)}
 .tools{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
 .tools input{flex:1;min-width:200px;font:inherit;font-weight:700;padding:13px 16px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chips button{font:inherit;font-weight:800;cursor:pointer;padding:10px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink)}
 .chips button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;list-style:none;padding:0;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;list-style:none;padding:0;margin-top:14px}
 @media(min-width:720px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
-.item{background:var(--card);border:2px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;animation:pop .4s both}
+.item{background:var(--card);border:2px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
 .item:hover{transform:translateY(-5px);box-shadow:0 10px 0 var(--line)}
-@keyframes pop{from{opacity:0;transform:translateY(12px)}}
-.tile{aspect-ratio:1;position:relative;display:grid;place-items:center;font-size:3.4rem;background:var(--c1)}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;left:10px;top:10px;background:#fff;color:var(--navy);font-weight:800;font-size:.72rem;border-radius:999px;padding:4px 10px}
-.ok{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:var(--yellow);border:3px solid #fff;display:grid;place-items:center;color:var(--navy);font-weight:800}
-.info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
-.info h3{font-size:1rem;line-height:1.25;color:var(--ink)}
+.item.hl{border-color:var(--orange);box-shadow:0 0 0 4px var(--yellow)}
+/* media + carousel */
+.media{aspect-ratio:1;position:relative;background:var(--c1);overflow:hidden}
+.track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;font-size:3.4rem}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--navy);font-weight:800;cursor:pointer;display:none;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.arr.l{left:6px}.arr.r{right:6px}
+@media(hover:hover){.media.multi:hover .arr{display:grid}}
+.dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:5px;justify-content:center;pointer-events:none}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.65);box-shadow:0 0 0 1px rgba(14,42,122,.3)}
+.dots i.on{background:var(--yellow);width:18px;border-radius:6px}
+.tag{position:absolute;left:10px;top:10px;background:#fff;color:var(--navy);font-weight:800;font-size:.72rem;border-radius:999px;padding:4px 10px;z-index:2}
+.ok{position:absolute;right:10px;top:10px;width:30px;height:30px;border-radius:50%;background:var(--yellow);border:3px solid #fff;display:grid;place-items:center;color:var(--navy);font-weight:800;z-index:2}
+.info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.info h3{font-size:1rem;line-height:1.25}.why{color:var(--muted);font-size:.85rem}
+.reel{font-size:.82rem;font-weight:800;color:var(--blue);text-decoration:none}
 .buy{margin-top:auto;text-align:center;text-decoration:none;font-weight:800;background:var(--yellow);color:var(--navy);border-radius:12px;padding:10px;border-bottom:4px solid var(--orange)}
 .empty{display:none;text-align:center;padding:30px;color:var(--muted)}
-/* footer */
-.social{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:46px 0 22px}
+/* how we pick + faq */
+.how{margin:56px 0 0;display:grid;gap:14px}
+@media(min-width:720px){.how{grid-template-columns:repeat(3,1fr)}}
+.how h2,.faq h2{grid-column:1/-1;color:var(--blue);font-size:clamp(1.5rem,4vw,2rem)}
+.step{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px}
+.step h3{color:var(--blue);font-size:1.1rem;margin-bottom:4px}.step p{color:var(--muted);font-size:.93rem}
+.faq{margin:40px 0 0}.faq h2{margin-bottom:12px}
+details{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:800}details p{color:var(--muted);margin-top:8px}
+/* follow */
+.follow{margin:52px 0 0;text-align:center;background:var(--yellow);color:var(--navy);border-radius:28px;padding:32px 20px;box-shadow:0 8px 0 var(--orange)}
+.follow h2{font-size:clamp(1.5rem,4vw,2.1rem)}.follow p{max-width:520px;margin:8px auto 0;font-weight:700}
+.follow .cta{margin-top:18px}
+.social{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 22px}
 .social a{text-decoration:none;font-weight:800;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:11px 20px}
 .social a:hover{background:var(--yellow);color:var(--navy)}
-footer{background:var(--navy);color:#cbd6ff;text-align:center;padding:30px 18px calc(30px + env(safe-area-inset-bottom));font-size:.85rem}
+footer{background:var(--navy);color:#cbd6ff;text-align:center;padding:30px 18px calc(30px + env(safe-area-inset-bottom));font-size:.85rem;margin-top:30px}
 footer b{font-family:var(--head);font-weight:400;color:var(--yellow);font-size:1.3rem;display:block;margin-bottom:6px}
 footer a{color:var(--yellow)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 20px;border-radius:999px;font-weight:800;display:none;z-index:50;max-width:90vw;text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 800 800">
-<circle cx="400" cy="400" r="392" fill="#f9c823"/>
-<circle cx="400" cy="400" r="392" fill="none" stroke="#f2a20c" stroke-width="10"/>
-<!-- sparkles -->
+<circle cx="400" cy="400" r="392" fill="#f9c823"/><circle cx="400" cy="400" r="392" fill="none" stroke="#f2a20c" stroke-width="10"/>
 <g fill="#fff"><path d="M235 120 l9 22 22 9 -22 9 -9 22 -9 -22 -22 -9 22 -9z"/><path d="M572 105 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z"/><path d="M610 250 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5z"/></g>
-<!-- bag -->
 <g stroke-linecap="round" stroke-linejoin="round">
-  <path d="M335 175 C335 60 465 60 465 175" fill="none" stroke="#0e2a7a" stroke-width="20"/>
-  <path d="M285 168 H515 Q536 168 539 190 L560 382 Q563 410 536 410 H264 Q237 410 240 382 L261 190 Q264 168 285 168Z" fill="#1746c9" stroke="#0e2a7a" stroke-width="10"/>
-  <path d="M258 205 H542" stroke="#0e2a7a" stroke-width="8" opacity=".5"/>
-  <!-- eyes -->
-  <ellipse cx="352" cy="268" rx="30" ry="36" fill="#fff"/><ellipse cx="448" cy="268" rx="30" ry="36" fill="#fff"/>
-  <circle cx="358" cy="274" r="17" fill="#0e2a7a"/><circle cx="454" cy="274" r="17" fill="#0e2a7a"/>
-  <circle cx="364" cy="266" r="6" fill="#fff"/><circle cx="460" cy="266" r="6" fill="#fff"/>
-  <!-- mouth + cheeks -->
-  <path d="M362 322 Q400 372 438 322 Z" fill="#0e2a7a" stroke="#0e2a7a" stroke-width="8"/>
-  <path d="M382 344 Q400 360 418 344 Q400 336 382 344Z" fill="#ff7a8a" stroke="none"/>
-  <circle cx="308" cy="325" r="15" fill="#ff8fa0" opacity=".75"/><circle cx="492" cy="325" r="15" fill="#ff8fa0" opacity=".75"/>
-  <!-- tick badge -->
-  <circle cx="530" cy="392" r="50" fill="#f9c823" stroke="#fff" stroke-width="10"/>
-  <path d="M506 392 L523 410 L556 372" fill="none" stroke="#0e2a7a" stroke-width="16"/>
-</g>
+<path d="M335 175 C335 60 465 60 465 175" fill="none" stroke="#0e2a7a" stroke-width="20"/>
+<path d="M285 168 H515 Q536 168 539 190 L560 382 Q563 410 536 410 H264 Q237 410 240 382 L261 190 Q264 168 285 168Z" fill="#1746c9" stroke="#0e2a7a" stroke-width="10"/>
+<path d="M258 205 H542" stroke="#0e2a7a" stroke-width="8" opacity=".5"/>
+<ellipse cx="352" cy="268" rx="30" ry="36" fill="#fff"/><ellipse cx="448" cy="268" rx="30" ry="36" fill="#fff"/>
+<circle cx="358" cy="274" r="17" fill="#0e2a7a"/><circle cx="454" cy="274" r="17" fill="#0e2a7a"/>
+<circle cx="364" cy="266" r="6" fill="#fff"/><circle cx="460" cy="266" r="6" fill="#fff"/>
+<path d="M362 322 Q400 372 438 322 Z" fill="#0e2a7a" stroke="#0e2a7a" stroke-width="8"/>
+<path d="M382 344 Q400 360 418 344 Q400 336 382 344Z" fill="#ff7a8a" stroke="none"/>
+<circle cx="308" cy="325" r="15" fill="#ff8fa0" opacity=".75"/><circle cx="492" cy="325" r="15" fill="#ff8fa0" opacity=".75"/>
+<circle cx="530" cy="392" r="50" fill="#f9c823" stroke="#fff" stroke-width="10"/>
+<path d="M506 392 L523 410 L556 372" fill="none" stroke="#0e2a7a" stroke-width="16"/></g>
 <g font-family="'Paytone One','Liberation Sans',sans-serif" text-anchor="middle" font-size="160" stroke-linejoin="round">
-  <g fill="#0e2a7a" stroke="#0e2a7a" stroke-width="30" transform="translate(0 8)"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
-  <g fill="#fff" stroke="#fff" stroke-width="28"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
-  <g fill="#1746c9"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
-</g>
+<g fill="#0e2a7a" stroke="#0e2a7a" stroke-width="30" transform="translate(0 8)"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
+<g fill="#fff" stroke="#fff" stroke-width="28"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g>
+<g fill="#1746c9"><text x="400" y="580">PAKKA</text><text x="400" y="720">PICK</text></g></g>
 </symbol></svg>
 
-<nav><div class="wrap">
+<nav class="top"><div class="wrap">
   <a class="brand" href="#top" aria-label="Pakka Pick home"><svg><use href="#logo"/></svg>Pakka Pick</a>
-  <a class="pill" id="navTrack" href="/price-tracker">Price Tracker</a>
+  <a class="pill ig" id="navIg" href="#" target="_blank" rel="noopener">Follow on Instagram</a>
 </div></nav>
 
 <header class="hero" id="top">
@@ -124,83 +135,132 @@ footer a{color:var(--yellow)}
     <svg class="logo" viewBox="0 0 800 800" role="img" aria-label="Pakka Pick logo"><use href="#logo"/></svg>
     <div>
       <h1>Buy <span>sure.</span> Buy smart.</h1>
-      <p id="tagline">Honest reviews and the best picks for gadgets, fashion, kitchen and home.</p>
+      <p>Honest reviews and the best picks for gadgets, fashion, kitchen and home.</p>
       <div class="te">పక్కా పిక్ - నమ్మకంగా కొనండి</div>
-      <div class="cta"><a class="btn a" id="yt" href="#" target="_blank" rel="noopener">Watch on YouTube</a><a class="btn b" href="#picks">See today's picks</a></div>
+      <div class="cta"><a class="btn a" href="#picks">See today's picks</a><a class="btn b" id="heroIg" href="#" target="_blank" rel="noopener">Our Instagram</a></div>
     </div>
   </div>
 </header>
 
 <main class="wrap">
+  <div class="fromig" id="fromig" role="status">👋 <span>Welcome from Instagram! <b id="fromName">Your product</b> is highlighted below.</span></div>
+
   <section class="trust" aria-label="Why Pakka Pick">
     <div class="tcard"><i>✅</i><div><b>Honest reviews</b><span>We say what's good and what's not.</span></div></div>
     <div class="tcard"><i>🧪</i><div><b>Tested by us</b><span>Real use before any recommendation.</span></div></div>
-    <div class="tcard"><i>💸</i><div><b>Best price</b><span>Track prices before you buy.</span></div></div>
+    <div class="tcard"><i>💸</i><div><b>Same price for you</b><span>Affiliate links never cost you extra.</span></div></div>
   </section>
 
-  <a class="tracker" id="banner" href="/price-tracker">
+  <a class="tracker" href="/price-tracker">
     <div><h3>Never overpay again</h3><p>Paste any Amazon link and see the price history. Buy at the right time.</p></div><b>Try price tracker</b>
   </a>
 
   <section class="sec" id="picks"><div class="wrap" style="padding:0">
-    <h2>Today's Pakka Picks</h2><p>Every product here is picked and tested by us.</p>
+    <h2>Today's Pakka Picks</h2><p>Saw it in a reel? Search the product name or tap its category.</p>
     <div class="tools"><input id="q" type="search" placeholder="Search products..." aria-label="Search products"></div>
     <div class="chips" id="chips" role="group" aria-label="Categories"></div>
     <ul class="grid" id="grid"></ul>
-    <p class="empty" id="empty">No picks match yet. Try another word or category.</p>
+    <p class="empty" id="empty">No picks match yet. Try another word, or message us on Instagram and we'll find it.</p>
   </div></section>
+
+  <section class="how" aria-label="How we pick">
+    <h2>How a product becomes a Pakka Pick</h2>
+    <div class="step"><h3>1. We buy and use it</h3><p>We test products ourselves for real days, not just unbox them.</p></div>
+    <div class="step"><h3>2. We compare prices</h3><p>We check price history so you don't buy at a fake "sale" price.</p></div>
+    <div class="step"><h3>3. We tell you the truth</h3><p>If it's not worth it, we say so in the reel, even if it pays us nothing.</p></div>
+  </section>
+
+  <section class="faq" aria-label="Questions">
+    <h2>Quick questions</h2>
+    <details><summary>Do I pay extra for buying through your links?</summary><p>No. The price on Amazon is exactly the same. Amazon pays us a small commission, which keeps our reviews free.</p></details>
+    <details><summary>Does the commission change what you recommend?</summary><p>No. Products that fail our testing don't make it here, whatever the commission.</p></details>
+    <details><summary>How do I find the product from a reel?</summary><p>Use the search box above, or open the link in the reel caption or our Instagram bio. Each reel's product is highlighted for you.</p></details>
+  </section>
+
+  <section class="follow">
+    <h2>Never miss a Pakka Pick</h2>
+    <p>New picks and deal alerts go on Instagram first. Follow us, and save this site so you can check here before you buy anything.</p>
+    <div class="cta"><a class="btn a" id="followIg" href="#" target="_blank" rel="noopener">Follow @pakkapick</a><button class="btn b" id="save" type="button" style="font:inherit;font-weight:800;cursor:pointer">Save this site</button></div>
+  </section>
 
   <nav class="social" id="social" aria-label="Social links"></nav>
 </main>
 
 <footer>
   <b>Pakka Pick</b>
-  <p>Links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+  <p>Links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.</p>
   <p style="margin-top:6px">Contact: <a id="mail" href="#"></a></p>
 </footer>
+<div id="toast" role="status"></div>
 
 <script>
 /* ========== EDIT THIS BLOCK ========== */
 const SITE={email:"hello@pakkapick.com",
-  youtube:"https://youtube.com/@pakkapick",
+  instagram:"https://instagram.com/pakkapick",
   social:[{l:"YouTube",u:"https://youtube.com/@pakkapick"},{l:"Instagram",u:"https://instagram.com/pakkapick"},{l:"Threads",u:"https://threads.net/@pakkapick"},{l:"Facebook",u:"https://facebook.com/pakkapick"}]};
 const CATS={Gadgets:{e:"🎧",c:"#dbe6ff"},Fashion:{e:"👕",c:"#ffe1ea"},Kitchen:{e:"🍳",c:"#ffefc2"},Home:{e:"🏠",c:"#d9f5e6"}};
-// image can be "" (emoji tile shows). Add your Amazon affiliate links in url.
+/* images: [] = emoji tile, 1 image = single photo, 2+ images = swipe carousel.
+   id: short name for Instagram links, e.g. yoursite.com/#oneplus-n6 highlights that product.
+   why: one honest line. reel: link to your Instagram review (optional). */
 const PRODUCTS=[
-  {t:"OnePlus N6 Lite(4+64GB) Under 15000",cat:"Gadgets",image:"",url:"https://link.amazon/B00KsyUSi"},
- {t:"Wireless Earbuds Under 2000",cat:"Gadgets",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Smart Watch 1.8 inch",cat:"Gadgets",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Air Fryer 4L",cat:"Kitchen",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Non-stick Cookware Set",cat:"Kitchen",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Men's Casual Sneakers",cat:"Fashion",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Cotton Kurta Set",cat:"Fashion",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Robot Vacuum Cleaner",cat:"Home",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
- {t:"Smart LED Bulb Pack",cat:"Home",image:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"}
+ {id:"oneplus-n6",t:"OnePlus N6 Lite (4+64GB) Under 15000",cat:"Gadgets",images:[],why:"Smooth for daily use at this price.",reel:"",url:"https://link.amazon/B00KsyUSi"},
+ {id:"earbuds-2000",t:"Wireless Earbuds Under 2000",cat:"Gadgets",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"smartwatch",t:"Smart Watch 1.8 inch",cat:"Gadgets",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"airfryer-4l",t:"Air Fryer 4L",cat:"Kitchen",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"cookware",t:"Non-stick Cookware Set",cat:"Kitchen",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"sneakers",t:"Men's Casual Sneakers",cat:"Fashion",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"kurta",t:"Cotton Kurta Set",cat:"Fashion",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"robot-vac",t:"Robot Vacuum Cleaner",cat:"Home",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"},
+ {id:"led-bulb",t:"Smart LED Bulb Pack",cat:"Home",images:[],why:"",reel:"",url:"https://www.amazon.in/dp/XXXXXXXXXX?tag=YOURTAG-21"}
 ];
 /* ===================================== */
-const $=id=>document.getElementById(id);
-$('yt').href=SITE.youtube;$('mail').href='mailto:'+SITE.email;$('mail').textContent=SITE.email;
-SITE.social.forEach(s=>{const a=document.createElement('a');a.href=s.u;a.textContent=s.l;a.target='_blank';a.rel='noopener';$('social').appendChild(a)});
+const $=id=>document.getElementById(id),mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+['navIg','heroIg','followIg'].forEach(i=>$(i).href=SITE.instagram);
+$('mail').href='mailto:'+SITE.email;$('mail').textContent=SITE.email;
+SITE.social.forEach(s=>{const a=mk('a','',s.l);a.href=s.u;a.target='_blank';a.rel='noopener';$('social').appendChild(a)});
+function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',4000)}
+$('save').onclick=()=>toast(/iPhone|iPad/.test(navigator.userAgent)?'Tap Share, then "Add to Home Screen".':'Press Ctrl+D (or tap the browser menu, then "Add to Home screen").');
 let cat='All';
-['All',...Object.keys(CATS)].forEach(c=>{const b=document.createElement('button');b.textContent=(CATS[c]?CATS[c].e+' ':'')+c;
- b.setAttribute('aria-pressed',c===cat);b.onclick=()=>{cat=c;[...$('chips').children].forEach(x=>x.setAttribute('aria-pressed',x===b));render()};$('chips').appendChild(b)});
+['All',...Object.keys(CATS)].forEach(c=>{const b=mk('button','',(CATS[c]?CATS[c].e+' ':'')+c);b.setAttribute('aria-pressed',c===cat);
+ b.onclick=()=>{cat=c;[...$('chips').children].forEach(x=>x.setAttribute('aria-pressed',x===b));render()};$('chips').appendChild(b)});
+
+function media(p,meta){
+ const m=mk('div','media'),imgs=(p.images||[]).filter(Boolean),tr=mk('div','track');m.style.setProperty('--c1',meta.c);
+ if(!imgs.length){tr.appendChild(mk('div','slide',meta.e))}
+ else imgs.forEach((u,i)=>{const s=mk('div','slide'),im=new Image();im.src=u;im.alt=p.t+(imgs.length>1?' (photo '+(i+1)+')':'');im.loading='lazy';
+  im.onerror=()=>{im.remove();s.textContent=meta.e};s.appendChild(im);tr.appendChild(s)});
+ m.append(tr);
+ if(imgs.length>1){
+  m.classList.add('multi');tr.tabIndex=0;tr.setAttribute('aria-label','Product photos, swipe for more');
+  const dots=mk('div','dots');imgs.forEach((_,i)=>dots.appendChild(mk('i',i?'':'on')));
+  const go=d=>tr.scrollBy({left:d*tr.clientWidth,behavior:'smooth'});
+  const l=mk('button','arr l','‹'),r=mk('button','arr r','›');l.type=r.type='button';l.setAttribute('aria-label','Previous photo');r.setAttribute('aria-label','Next photo');
+  l.onclick=()=>go(-1);r.onclick=()=>go(1);
+  tr.addEventListener('scroll',()=>{const n=Math.round(tr.scrollLeft/tr.clientWidth);[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===n))},{passive:true});
+  tr.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)});
+  m.append(l,r,dots)}
+ const tag=mk('span','tag',p.cat),ok=mk('span','ok','✓');ok.title='Pakka Pick';m.append(tag,ok);return m}
+
 function render(){
  const q=$('q').value.trim().toLowerCase();
  const list=PRODUCTS.filter(p=>(cat==='All'||p.cat===cat)&&p.t.toLowerCase().includes(q));
  $('grid').innerHTML='';
- list.forEach((p,i)=>{
-  const meta=CATS[p.cat]||{e:"🛍️",c:"#eee"},li=document.createElement('li');li.className='item';li.style.animationDelay=(i*50)+'ms';
-  const tile=document.createElement('div');tile.className='tile';tile.style.setProperty('--c1',meta.c);tile.textContent=meta.e;
-  if(p.image){const im=document.createElement('img');im.src=p.image;im.alt=p.t;im.loading='lazy';tile.appendChild(im)}
-  const tag=document.createElement('span');tag.className='tag';tag.textContent=p.cat;
-  const ok=document.createElement('span');ok.className='ok';ok.textContent='✓';ok.title='Pakka Pick';
-  tile.append(tag,ok);
-  const info=document.createElement('div');info.className='info';
-  const h=document.createElement('h3');h.textContent=p.t;
-  const a=document.createElement('a');a.className='buy';a.href=p.url;a.target='_blank';a.rel='noopener sponsored nofollow';a.textContent='View on Amazon';
-  info.append(h,a);li.append(tile,info);$('grid').appendChild(li)});
- $('empty').style.display=list.length?'none':'block'}
-$('q').addEventListener('input',render);render();
+ list.forEach(p=>{
+  const meta=CATS[p.cat]||{e:"🛍️",c:"#eee"},li=mk('li','item');li.id=p.id;
+  const info=mk('div','info');info.appendChild(mk('h3','',p.t));
+  if(p.why)info.appendChild(mk('p','why',p.why));
+  if(p.reel){const r=mk('a','reel','▶ Watch our review');r.href=p.reel;r.target='_blank';r.rel='noopener';info.appendChild(r)}
+  const a=mk('a','buy','View on Amazon');a.href=p.url;a.target='_blank';a.rel='noopener sponsored nofollow';info.appendChild(a);
+  li.append(media(p,meta),info);$('grid').appendChild(li)});
+ $('empty').style.display=list.length?'none':'block';highlight()}
+
+function highlight(){
+ const id=decodeURIComponent(location.hash.slice(1)),p=PRODUCTS.find(x=>x.id===id);
+ if(!p)return;const el=$(id);if(!el)return;
+ el.classList.add('hl');$('fromName').textContent=p.t;$('fromig').classList.add('show');
+ if(!highlight.done){highlight.done=1;setTimeout(()=>el.scrollIntoView({block:'center'}),150)}}
+$('q').addEventListener('input',render);
+addEventListener('hashchange',()=>{highlight.done=0;render()});render();
 </script>
 </body>
 </html>
